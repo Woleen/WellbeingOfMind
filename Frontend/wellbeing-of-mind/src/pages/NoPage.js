@@ -1,5 +1,13 @@
+import "./Articles.css";
+
 const NoPage = () => {
-  return <h1>404</h1>;
+  return (
+    <>
+      <div className="container">
+        <h2 className="content-header">404</h2>
+      </div>
+    </>
+  );
 };
 
 export default NoPage;
