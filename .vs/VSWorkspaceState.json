@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Frontend",
+    "\\Frontend\\wellbeing-of-mind",
+    "\\Frontend\\wellbeing-of-mind\\public",
+    "\\Frontend\\wellbeing-of-mind\\src"
   ],
-  "SelectedNode": "\\C:\\Users\\sonas\\Source\\Repos\\WellbeingOfMind",
   "PreviewInSolutionExplorer": false
 }
