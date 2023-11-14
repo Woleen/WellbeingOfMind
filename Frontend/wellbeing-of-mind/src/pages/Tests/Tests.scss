@@ -7,20 +7,22 @@ $foreground: #2d264b;
 
 body{
     font-family: monospace;
-    background: linear-gradient(0deg, $primary 0.3%, $accent);
     color : $foreground;
-    display: flex;
+    display: block;
     justify-content: center;
     margin: 0 auto;
-    padding: 0 30px;
+    
     height: 100vh;
 }
 
 .quiz-container{
+    border: solid black 1px;
     width: 500 px;
-    background: $bg;
     border-radius: 4px;
-    margin-top: 100px;
+    margin-top: 30px;
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-bottom: 10px;
     padding: 30px 90px;
     box-sizing: border-box;
 
@@ -58,8 +60,8 @@ body{
             cursor : pointer;
         }
         .selected-answer{
-            background: $primary;
-            border: 1px solid $accent;
+            background:dodgerblue;
+            border: 1px solid rgb(30, 120, 215);
             color: $bg;
         }
     }
@@ -69,7 +71,7 @@ body{
         justify-content: flex-end;
     }
     button{
-        background: linear-gradient(0deg, $primary 0.3%, $accent);
+        background:dodgerblue;
         border-radius: 9px;
         font-size: 18px;
         color: $bg;
