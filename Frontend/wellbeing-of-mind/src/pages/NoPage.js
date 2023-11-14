@@ -1,13 +1,13 @@
 import "./Articles.css";
 
-function Articles() {
+const NoPage = () => {
   return (
     <>
       <div className="container">
-        <h2 className="content-header">Articles</h2>
+        <h2 className="content-header">404</h2>
       </div>
     </>
   );
-}
+};
 
-export default Articles;
+export default NoPage;
