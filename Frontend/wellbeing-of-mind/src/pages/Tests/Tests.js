@@ -40,8 +40,12 @@ const Quiz = ({questions}) => {
             setCurrentQuestion(0);
             setShowResult(true);
         }
-
     }
+
+    const onTryAgain = () => {
+        setResult(resultInitialState);
+        setShowResult(false);
+    }  
 
 return(
     <div className="quiz-container">
@@ -80,7 +84,7 @@ return(
             <p>
                 Wrong Answer: <span>{result.wrongAnswers}</span>
             </p>
-            <button>Try again</button>
+            <button onClick={onTryAgain}>Try again</button>
             </div>}
         
     </div>

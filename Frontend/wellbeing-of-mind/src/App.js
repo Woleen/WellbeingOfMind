@@ -24,7 +24,7 @@ function App() {
    
      
   );
-    {/* <Tests questions={jsQuizz.questions} />; */}
+   
 
    
  
