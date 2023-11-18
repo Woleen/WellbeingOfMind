@@ -10,6 +10,7 @@ const Quiz = ({questions}) => {
     const [result, setResult] = useState(resultInitialState);
     const [showResult, setShowResult] = useState(false);
 
+
     const onAnswerClick = (answer, index) => {
         setAnswerIdx(index);
         if(answer === correctAnswer)
