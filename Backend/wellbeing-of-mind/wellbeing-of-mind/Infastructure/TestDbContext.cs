@@ -5,6 +5,7 @@ namespace wellbeing_of_mind.Infastructure
 {
     public class TestDbContext : DbContext
     {
+        public DbSet<Article> Articles => Set<Article>();
         public DbSet<Question> Questions => Set<Question>();
         public DbSet<Choice> Choices => Set<Choice>();
 

@@ -1,4 +1,3 @@
-
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -13,19 +12,21 @@ namespace wellbeing_of_mind
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
-            //string mySqlConnectionStr = builder.Configuration.GetConnectionString("MyDatabaseConnection");
-
-            //builder.Services.AddDbContext<TestDbContext>(options =>
-            //{
-            //    options.UseMySql(mySqlConnectionStr, ServerVersion.AutoDetect(mySqlConnectionStr));
-            //    options.EnableSensitiveDataLogging(builder.Environment.IsDevelopment());
-            //});
-
+            // Added cors to allow react (default http://localhost:3000) to connect  
+            builder.Services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(builder =>
+                {
+                    builder.WithOrigins("http://localhost:3000")
+                           .AllowAnyHeader()
+                           .AllowAnyMethod();
+                });
+            });
             builder.Services.AddDbContext<TestDbContext>(options =>
             {
-                options.UseSqlServer(builder.Configuration.GetConnectionString("mydatabaseconnection"));
-                options.EnableSensitiveDataLogging(builder.Environment.IsDevelopment());
+                options.UseMySql(
+                    builder.Configuration.GetConnectionString("MyDatabaseConnection"),
+                    new MySqlServerVersion(new Version(5, 5, 62))); ;
             });
 
 
@@ -33,16 +34,6 @@ namespace wellbeing_of_mind
             builder.Services.AddScoped<ITestRepository, TestRepository>();
 
             builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
-
-            builder.Services.AddCors(options =>
-            options.AddDefaultPolicy(policyBuilder =>
-            {
-                policyBuilder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
-               
-            }
-                )
-
-            ); ;
 
             builder.Services.AddControllers(configure =>
             configure.CacheProfiles.Add("Any-60",
@@ -62,7 +53,7 @@ namespace wellbeing_of_mind
             builder.Services.AddMemoryCache();
 
             var app = builder.Build();
-
+            CheckDatabaseConnection();
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
@@ -79,13 +70,35 @@ namespace wellbeing_of_mind
 
             app.UseAuthorization(); 
 
-            app.UseResponseCaching();
-
-            app.UseCors();
-
+    	    app.UseResponseCaching();
             app.MapControllers();
-
+            app.UseCors();
             app.Run();
+
+            // To check db connection - will be removed later
+            void CheckDatabaseConnection()
+            {
+                using (var scope = app.Services.CreateScope())
+                {
+                    var services = scope.ServiceProvider;
+                    try
+                    {
+                        var dbContext = services.GetRequiredService<TestDbContext>();
+                        if (dbContext.Database.CanConnect())
+                        {
+                            Console.WriteLine("Database is connected!");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Unable to connect to the database.");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"An error occurred while checking the database connection: {ex.Message}");
+                    }
+                }
+            }
         }
     }
 }
