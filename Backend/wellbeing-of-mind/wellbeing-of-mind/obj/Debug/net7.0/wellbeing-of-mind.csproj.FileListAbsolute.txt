@@ -76,7 +76,6 @@ C:\Users\sonas\source\repos\wellbeing-of-mind\wellbeing-of-mind\obj\Debug\net7.0
 C:\Users\sonas\source\repos\wellbeing-of-mind\wellbeing-of-mind\obj\Debug\net7.0\ref\wellbeing-of-mind.dll
 C:\Users\sonas\source\repos\wellbeing-of-mind\wellbeing-of-mind\bin\Debug\net7.0\AutoMapper.dll
 C:\Users\sonas\source\repos\wellbeing-of-mind\wellbeing-of-mind\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-C:\Users\sonas\source\repos\WellbeingOfMind\Backend\wellbeing-of-mind\wellbeing-of-mind\bin\Debug\net7.0\appsettings.Development.json
 C:\Users\sonas\source\repos\WellbeingOfMind\Backend\wellbeing-of-mind\wellbeing-of-mind\bin\Debug\net7.0\appsettings.json
 C:\Users\sonas\source\repos\WellbeingOfMind\Backend\wellbeing-of-mind\wellbeing-of-mind\bin\Debug\net7.0\wellbeing-of-mind.exe
 C:\Users\sonas\source\repos\WellbeingOfMind\Backend\wellbeing-of-mind\wellbeing-of-mind\bin\Debug\net7.0\wellbeing-of-mind.deps.json
