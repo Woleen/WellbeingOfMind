@@ -154,3 +154,5 @@ C:\Users\sonas\source\repos\WellbeingOfMind\Backend\wellbeing-of-mind\wellbeing-
 C:\Users\sonas\source\repos\WellbeingOfMind\Backend\wellbeing-of-mind\wellbeing-of-mind\obj\Debug\net7.0\wellbeing-of-mind.pdb
 C:\Users\sonas\source\repos\WellbeingOfMind\Backend\wellbeing-of-mind\wellbeing-of-mind\obj\Debug\net7.0\wellbeing-of-mind.genruntimeconfig.cache
 C:\Users\sonas\source\repos\WellbeingOfMind\Backend\wellbeing-of-mind\wellbeing-of-mind\obj\Debug\net7.0\ref\wellbeing-of-mind.dll
+C:\Users\sonas\source\repos\WellbeingOfMind\Backend\wellbeing-of-mind\wellbeing-of-mind\bin\Debug\net7.0\MySqlConnector.dll
+C:\Users\sonas\source\repos\WellbeingOfMind\Backend\wellbeing-of-mind\wellbeing-of-mind\bin\Debug\net7.0\Pomelo.EntityFrameworkCore.MySql.dll

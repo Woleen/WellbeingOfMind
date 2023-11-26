@@ -13,9 +13,7 @@ namespace wellbeing_of_mind.Infastructure
             _dbcontext = dbcontext;
         }
 
-      
-
-            public Question? GetQuestion(int id)
+        public Question? GetQuestion(int id)
         {
             return _dbcontext.Questions.Include(q => q.Choices)
                  .SingleOrDefault(q => q.Id == id);

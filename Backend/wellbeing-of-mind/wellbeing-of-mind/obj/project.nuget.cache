@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "TKZZleYbkgDI33FGOEdxiQfkdw+6qUYjcu4x6eRZNIierd6qF1W2Qf5zVdUTbou10F4sXEweuQaW7eSWHtFCtg==",
+  "dgSpecHash": "9T6dI+YZ/WtpC/PSsNlksv7b+Xj2ZL+Xqz1qJ7T+0pBPae74kvHEj/P6T21+yDNQGQxe/cXm0kG7HXI3lRlSLw==",
   "success": true,
   "projectFilePath": "C:\\Users\\sonas\\source\\repos\\WellbeingOfMind\\Backend\\wellbeing-of-mind\\wellbeing-of-mind\\wellbeing-of-mind.csproj",
   "expectedPackageFiles": [
@@ -46,6 +46,8 @@
     "C:\\Users\\sonas\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\sonas\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\sonas\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\sonas\\.nuget\\packages\\mysqlconnector\\2.2.5\\mysqlconnector.2.2.5.nupkg.sha512",
+    "C:\\Users\\sonas\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\7.0.0\\pomelo.entityframeworkcore.mysql.7.0.0.nupkg.sha512",
     "C:\\Users\\sonas\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "C:\\Users\\sonas\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "C:\\Users\\sonas\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",

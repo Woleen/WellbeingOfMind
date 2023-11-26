@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using wellbeing_of_mind.Domain;
 using wellbeing_of_mind.DTOs;
 using wellbeing_of_mind.Infastructure;
 
@@ -11,9 +13,11 @@ namespace wellbeing_of_mind.Controllers
     {
         private readonly TestDbContext _dbContext;
 
-        public ChoicesController(TestDbContext dbContext)
+        private readonly IMapper _mapper;
+        public ChoicesController(TestDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
+            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
         //GET 
@@ -29,13 +33,7 @@ namespace wellbeing_of_mind.Controllers
                 return NotFound();
             }
 
-            var choicesDto = question.Choices.Select(q =>
-                new ChoiceDto()
-                { 
-                    Id = q.Id,
-                    ChoiceContent = q.ChoiceContent,
-                }
-           );
+            var choicesDto = _mapper.Map<IEnumerable<ChoiceDto>>(question.Choices.Select(q => q));
             return Ok(choicesDto);
         }
 
