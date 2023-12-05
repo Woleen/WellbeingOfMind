@@ -48,12 +48,12 @@ const Layout = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link d-none d-md-block" to="/tests">
+                <Link className="nav-link d-none d-md-block" to="/test">
                   Tests
                 </Link>
                 <Link
                   className="nav-link d-md-none d-flex justify-content-center align-items-center"
-                  to="/tests"
+                  to="/test"
                 >
                   <FontAwesomeIcon icon={faVial} />
                 </Link>

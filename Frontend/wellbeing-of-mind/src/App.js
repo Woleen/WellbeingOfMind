@@ -4,8 +4,8 @@ import Articles from "./pages/Articles";
 import ArticleDetail from "./pages/ArticleDetail";
 import NoPage from "./pages/NoPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Tests from "./pages/Tests/Tests";
-import { jsQuizz } from "./pages/Tests/constatants";
+import Test from "./pages/Tests/Test";
+
 
 function App() {
   return (
@@ -17,8 +17,8 @@ function App() {
             <Route path="/article/:articleId" element={<ArticleDetail />} />
             <Route path="*" element={<NoPage />} />
             <Route
-              path="/tests"
-              element={<Tests questions={jsQuizz.questions} />}
+              path="/test"
+              element={<Test />}
             ></Route>
           </Route>
         </Routes>

@@ -26,6 +26,7 @@ namespace WellbeingOfMindAPI.Controllers
         {
             var articles = _dbContext.Articles.ToList();
             return Ok(articles);
+
         }
 
         [HttpGet("{id}")]
