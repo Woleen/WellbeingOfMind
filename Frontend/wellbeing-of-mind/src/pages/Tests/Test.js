@@ -1,5 +1,10 @@
+/// TO DO: 
+/// переробити .map бо моя АPI more nested 
+/// перейменувати answers і все інше відповідно до того, як воно записано в API
+
+
 import React, { Component } from 'react';
-import jsQuizz from './api';
+import TestDetail from './api';
 import Quiz from './components/Quiz';
 import Result from './components/Result';
 
@@ -23,12 +28,10 @@ class Test extends Component {
   }
 
   componentDidMount() {
-    const shuffledAnswerOptions = jsQuizz.map(question =>
-      this.shuffleArray(question.answers)
-    );
+    const answerOptions = TestDetail.map(question => question.choices)
     this.setState({
-      question: jsQuizz[0].question,
-      answerOptions: shuffledAnswerOptions[0]
+      question: TestDetail[0].question,
+      answerOptions: answerOptions[0]
     });
   }
 
@@ -55,7 +58,7 @@ class Test extends Component {
   handleAnswerSelected(event) {
     this.setUserAnswer(event.currentTarget.value);
 
-    if (this.state.questionId < jsQuizz.length) {
+    if (this.state.questionId < TestDetail.length) {
       setTimeout(() => this.setNextQuestion(), 300);
     } else {
       setTimeout(() => this.setResults(this.getResults()), 300);
@@ -79,8 +82,8 @@ class Test extends Component {
     this.setState({
       counter: counter,
       questionId: questionId,
-      question: jsQuizz[counter].question,
-      answerOptions: jsQuizz[counter].answers,
+      question: TestDetail[counter].question,
+      answerOptions: TestDetail[counter].answers,
       answer: ''
     });
   }
@@ -109,7 +112,7 @@ class Test extends Component {
         answerOptions={this.state.answerOptions}
         questionId={this.state.questionId}
         question={this.state.question}
-        questionTotal={jsQuizz.length}
+        questionTotal={TestDetail.length}
         onAnswerSelected={this.handleAnswerSelected}
       />
     );

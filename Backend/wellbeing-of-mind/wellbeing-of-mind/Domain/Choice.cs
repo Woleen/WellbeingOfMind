@@ -9,7 +9,7 @@ namespace wellbeing_of_mind.Domain
         public int Id {  get; set; }
         public string ChoiceContent { get; set; }
 
-        public int ChoiceWeight { get; set; }
+        public string ChoiceType { get; set; }
         public Question Question { get; set; }
         [ForeignKey(nameof(Question))]
         public int QuestionId { get; set; } 

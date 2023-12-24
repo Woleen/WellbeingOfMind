@@ -8,7 +8,10 @@ namespace wellbeing_of_mind.Infastructure
     public interface ITestRepository
     {
         IEnumerable<Question> GetQuestions(string? search);
-        Question? GetQuestion(int id);
+        Question? Get(int id);
+
+        IEnumerable<Test> GetTests(string? search);
+        Test? GetTestbyId(int id);
         
         }
 }

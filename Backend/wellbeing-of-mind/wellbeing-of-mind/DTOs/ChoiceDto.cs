@@ -7,8 +7,6 @@ namespace wellbeing_of_mind.DTOs
     {
         public int Id { get; set; }
         public string ChoiceContent { get; set; } = string.Empty;
-
-        public int ChoiceWeight { get; set; } 
-        
+        public string ChoiceType { get; set; } = string.Empty;
     }
 }

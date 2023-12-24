@@ -10,8 +10,8 @@ namespace wellbeing_of_mind.Configurations.Mapper
             CreateMap<Question, QuestionDto>();
             CreateMap<Question, QuestionAnswersDto>();
             CreateMap<Choice, ChoiceDto>();
-
-
+            CreateMap<Test, TestDto>();
+            CreateMap<Test, TestQuestionsDto>();
         }
     }
 }

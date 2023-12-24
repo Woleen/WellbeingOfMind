@@ -22,11 +22,11 @@ namespace wellbeing_of_mind
                            .AllowAnyMethod();
                 });
             });
+
             builder.Services.AddDbContext<TestDbContext>(options =>
             {
-                options.UseMySql(
-                    builder.Configuration.GetConnectionString("MyDatabaseConnection"),
-                    new MySqlServerVersion(new Version(5, 5, 62))); ;
+                options.UseSqlServer(builder.Configuration.GetConnectionString("MyDatabaseConnection"));
+                options.EnableSensitiveDataLogging(builder.Environment.IsDevelopment());
             });
 
 

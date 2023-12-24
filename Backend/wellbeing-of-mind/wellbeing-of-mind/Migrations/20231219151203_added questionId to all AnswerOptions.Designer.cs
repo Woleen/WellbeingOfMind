@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using wellbeing_of_mind.Infastructure;
 
@@ -11,9 +12,11 @@ using wellbeing_of_mind.Infastructure;
 namespace wellbeing_of_mind.Migrations
 {
     [DbContext(typeof(TestDbContext))]
-    partial class TestDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231219151203_added questionId to all AnswerOptions")]
+    partial class addedquestionIdtoallAnswerOptions
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -83,27 +86,6 @@ namespace wellbeing_of_mind.Migrations
                     b.ToTable("Choices");
 
                     b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            ChoiceContent = "I do not worry",
-                            ChoiceType = "No Anxiety",
-                            QuestionId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            ChoiceContent = "Sometimes",
-                            ChoiceType = "Mild Anxiety",
-                            QuestionId = 1
-                        },
-                        new
-                        {
-                            Id = 3,
-                            ChoiceContent = "Almost every day",
-                            ChoiceType = "Severe Anxiety",
-                            QuestionId = 1
-                        },
                         new
                         {
                             Id = 4,

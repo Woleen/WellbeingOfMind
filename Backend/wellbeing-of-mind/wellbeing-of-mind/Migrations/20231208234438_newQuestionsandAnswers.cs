@@ -1,5 +1,4 @@
 ﻿using System;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
@@ -9,61 +8,50 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace wellbeing_of_mind.Migrations
 {
     /// <inheritdoc />
-    public partial class ScalingAndTrying : Migration
+    public partial class newQuestionsandAnswers : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AlterDatabase()
-                .Annotation("MySql:CharSet", "utf8mb4");
-
             migrationBuilder.CreateTable(
                 name: "Articles",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Title = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    Description = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    Author = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    Content = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    CreatedAt = table.Column<DateTime>(type: "datetime", nullable: false),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime", nullable: true)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Author = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Articles", x => x.Id);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
+                });
 
             migrationBuilder.CreateTable(
                 name: "Questions",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    QuestionContent = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4")
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    QuestionContent = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Questions", x => x.Id);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
+                });
 
             migrationBuilder.CreateTable(
                 name: "Choices",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    ChoiceContent = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    ChoiceWeight = table.Column<int>(type: "int", nullable: false),
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ChoiceContent = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ChoiceType = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     QuestionId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -75,29 +63,29 @@ namespace wellbeing_of_mind.Migrations
                         principalTable: "Questions",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
+                });
 
             migrationBuilder.InsertData(
                 table: "Questions",
                 columns: new[] { "Id", "QuestionContent" },
                 values: new object[,]
                 {
-                    { 1, "How often do you feel nervous or anxious?" },
-                    { 2, "Do you have trouble relaxing?" },
+                    { 1, "How often have you been bothered by becoming easily annoyed or irritable over the last two weeks ?" },
+                    { 2, "Do you have trouble relaxing ?" },
                     { 3, "How often do you worry about things that might go wrong?" },
-                    { 4, "Do you experience physical symptoms such as trembling, sweating, or a racing heart when anxious?" }
+                    { 4, "Do you experience physical symptoms such as trembling, sweating, or a racing heart when anxious?" },
+                    { 5, "How often have you been bothered by not being able to stop or control worrying over the last two weeks?" },
+                    { 6, "How often do you find it difficult to make a decision?" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Choices",
-                columns: new[] { "Id", "ChoiceContent", "ChoiceWeight", "QuestionId" },
+                columns: new[] { "Id", "ChoiceContent", "ChoiceType", "QuestionId" },
                 values: new object[,]
                 {
-                    { 1, "Never", -1, 1 },
-                    { 2, "Sometimes", 0, 1 },
-                    { 3, "Often", 1, 1 },
-                    { 4, "Always", 2, 1 }
+                    { 1, "I do not worry", "No Anxiety", 1 },
+                    { 2, "Sometimes", "Mild Anxiety", 1 },
+                    { 3, "Almost every day", "Severe Anxiety", 1 }
                 });
 
             migrationBuilder.CreateIndex(

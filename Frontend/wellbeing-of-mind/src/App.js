@@ -4,6 +4,7 @@ import Articles from "./pages/Articles";
 import ArticleDetail from "./pages/ArticleDetail";
 import NoPage from "./pages/NoPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import TestsList from "./pages/Tests/TestsPage";
 import Test from "./pages/Tests/Test";
 
 
@@ -15,12 +16,9 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route path="/articles" element={<Articles />}></Route>
             <Route path="/article/:articleId" element={<ArticleDetail />} />
-            <Route path="*" element={<NoPage />} />
-            <Route
-              path="/test"
-              element={<Test />}
-            ></Route>
-          </Route>
+            <Route path="/tests" element={<TestsList />} />
+            <Route path="/tests/:testId" element={<Test />} />
+            <Route path="*" element={<NoPage />} /></Route>
         </Routes>
       </BrowserRouter>
     </div>

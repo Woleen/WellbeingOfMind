@@ -1,6 +1,4 @@
-﻿using wellbeing_of_mind.Domain;
-
-namespace wellbeing_of_mind.DTOs
+﻿namespace wellbeing_of_mind.DTOs
 {
     public class QuestionDto
     {

@@ -47,17 +47,17 @@ namespace wellbeing_of_mind.Controllers
 
         // GET api/questions/1
         [HttpGet("{id:int}")]
-        public ActionResult<QuestionDto> GetQuestionById(int id)
+        public ActionResult<QuestionAnswersDto> GetQuestionById(int id)
         {
             var cacheKey = $"{nameof(QuestionsController)}-{nameof(GetQuestionById)}-{id}";
 
             if(!_memoryCache.TryGetValue<QuestionAnswersDto>(cacheKey, out var questionAnswersDto))
                 {
-                var question = _questionsRepository.GetQuestion(id);
+                var question = _questionsRepository.Get(id);
                 if (question is not null)
                 {
                     questionAnswersDto = _mapper.Map<QuestionAnswersDto>(question);
-                    _memoryCache.Set(cacheKey, questionAnswersDto, TimeSpan.FromSeconds(60));
+                    _memoryCache.Set(cacheKey, questionAnswersDto, TimeSpan.FromSeconds(5));
                 }
             }
             if (questionAnswersDto is null)

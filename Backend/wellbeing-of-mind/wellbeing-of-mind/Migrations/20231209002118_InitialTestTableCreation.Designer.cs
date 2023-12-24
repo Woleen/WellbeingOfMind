@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using wellbeing_of_mind.Infastructure;
 
@@ -11,9 +12,11 @@ using wellbeing_of_mind.Infastructure;
 namespace wellbeing_of_mind.Migrations
 {
     [DbContext(typeof(TestDbContext))]
-    partial class TestDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231209002118_InitialTestTableCreation")]
+    partial class InitialTestTableCreation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -103,132 +106,6 @@ namespace wellbeing_of_mind.Migrations
                             ChoiceContent = "Almost every day",
                             ChoiceType = "Severe Anxiety",
                             QuestionId = 1
-                        },
-                        new
-                        {
-                            Id = 4,
-                            ChoiceContent = "I do not worry",
-                            ChoiceType = "No Anxiety",
-                            QuestionId = 2
-                        },
-                        new
-                        {
-                            Id = 5,
-                            ChoiceContent = "Sometimes",
-                            ChoiceType = "Mild Anxiety",
-                            QuestionId = 2
-                        },
-                        new
-                        {
-                            Id = 6,
-                            ChoiceContent = "Almost every day",
-                            ChoiceType = "Severe Anxiety",
-                            QuestionId = 2
-                        },
-                        new
-                        {
-                            Id = 7,
-                            ChoiceContent = "I do not worry",
-                            ChoiceType = "No Anxiety",
-                            QuestionId = 3
-                        },
-                        new
-                        {
-                            Id = 8,
-                            ChoiceContent = "Sometimes",
-                            ChoiceType = "Mild Anxiety",
-                            QuestionId = 3
-                        },
-                        new
-                        {
-                            Id = 9,
-                            ChoiceContent = "Almost every day",
-                            ChoiceType = "Severe Anxiety",
-                            QuestionId = 3
-                        },
-                        new
-                        {
-                            Id = 10,
-                            ChoiceContent = "I do not worry",
-                            ChoiceType = "No Anxiety",
-                            QuestionId = 3
-                        },
-                        new
-                        {
-                            Id = 11,
-                            ChoiceContent = "Sometimes",
-                            ChoiceType = "Mild Anxiety",
-                            QuestionId = 3
-                        },
-                        new
-                        {
-                            Id = 12,
-                            ChoiceContent = "Almost every day",
-                            ChoiceType = "Severe Anxiety",
-                            QuestionId = 3
-                        },
-                        new
-                        {
-                            Id = 13,
-                            ChoiceContent = "I do not worry",
-                            ChoiceType = "No Anxiety",
-                            QuestionId = 4
-                        },
-                        new
-                        {
-                            Id = 14,
-                            ChoiceContent = "Sometimes",
-                            ChoiceType = "Mild Anxiety",
-                            QuestionId = 4
-                        },
-                        new
-                        {
-                            Id = 15,
-                            ChoiceContent = "Almost every day",
-                            ChoiceType = "Severe Anxiety",
-                            QuestionId = 4
-                        },
-                        new
-                        {
-                            Id = 16,
-                            ChoiceContent = "I do not worry",
-                            ChoiceType = "No Anxiety",
-                            QuestionId = 5
-                        },
-                        new
-                        {
-                            Id = 17,
-                            ChoiceContent = "Sometimes",
-                            ChoiceType = "Mild Anxiety",
-                            QuestionId = 5
-                        },
-                        new
-                        {
-                            Id = 18,
-                            ChoiceContent = "Almost every day",
-                            ChoiceType = "Severe Anxiety",
-                            QuestionId = 5
-                        },
-                        new
-                        {
-                            Id = 19,
-                            ChoiceContent = "I do not worry",
-                            ChoiceType = "No Anxiety",
-                            QuestionId = 6
-                        },
-                        new
-                        {
-                            Id = 20,
-                            ChoiceContent = "Sometimes",
-                            ChoiceType = "Mild Anxiety",
-                            QuestionId = 6
-                        },
-                        new
-                        {
-                            Id = 21,
-                            ChoiceContent = "Almost every day",
-                            ChoiceType = "Severe Anxiety",
-                            QuestionId = 6
                         });
                 });
 

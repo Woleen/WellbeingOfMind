@@ -13,7 +13,7 @@ namespace wellbeing_of_mind.Infastructure
             _dbcontext = dbcontext;
         }
 
-        public Question? GetQuestion(int id)
+        public Question? Get(int id)
         {
             return _dbcontext.Questions.Include(q => q.Choices)
                  .SingleOrDefault(q => q.Id == id);
@@ -28,6 +28,25 @@ namespace wellbeing_of_mind.Infastructure
             }
 
             return questions.ToList();
+        }
+
+        public Test? GetTestbyId(int id)
+        {
+            return _dbcontext.Tests.
+                Include(q => q.Questions).ThenInclude(q => q.Choices)
+                .SingleOrDefault(t => t.Id == id);
+                    
+        }
+
+        public IEnumerable<Test> GetTests(string? search)
+        {
+            var tests = _dbcontext.Tests.AsQueryable();
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                tests = tests.Where(t => t.Title.Contains(search));
+            }
+
+            return tests.ToList();
         }
     }
 }
