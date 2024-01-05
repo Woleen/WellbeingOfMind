@@ -28,7 +28,6 @@ const ArticleList = () => {
         <input
           type="text"
           className="form-control"
-          placeholder="Search for articles"
           onChange={() => {}}
         />
         <button className="btn btn-outline-secondary" type="button">

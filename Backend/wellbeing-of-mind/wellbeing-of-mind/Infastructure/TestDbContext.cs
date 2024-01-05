@@ -62,12 +62,12 @@ namespace wellbeing_of_mind.Infastructure
                 ) ;
 
             modelBuilder.Entity<Choice>().HasData(
-                new Choice { Id = 1, ChoiceContent = "I do not worry", ChoiceType = "No Anxiety", QuestionId = 1 },
-                new Choice { Id = 2, ChoiceContent = "Sometimes", ChoiceType = "Mild Anxiety", QuestionId = 1 },
+                new Choice { Id = 1, ChoiceContent = "One-two time", ChoiceType = "No Anxiety", QuestionId = 1 },
+                new Choice { Id = 2, ChoiceContent = "Few times", ChoiceType = "Mild Anxiety", QuestionId = 1 },
                 new Choice { Id = 3, ChoiceContent = "Almost every day", ChoiceType = "Severe Anxiety", QuestionId = 1 }
                 );
             modelBuilder.Entity<Choice>().HasData(
-                new Choice { Id = 4, ChoiceContent = "I do not worry", ChoiceType = "No Anxiety", QuestionId = 2 },
+                new Choice { Id = 4, ChoiceContent = "No, I do not", ChoiceType = "No Anxiety", QuestionId = 2 },
                 new Choice { Id = 5, ChoiceContent = "Sometimes", ChoiceType = "Mild Anxiety", QuestionId = 2 },
                 new Choice { Id = 6, ChoiceContent = "Almost every day", ChoiceType = "Severe Anxiety", QuestionId = 2 }
                 );
@@ -77,12 +77,7 @@ namespace wellbeing_of_mind.Infastructure
                 new Choice { Id = 9, ChoiceContent = "Almost every day", ChoiceType = "Severe Anxiety", QuestionId = 3 }
                 );
             modelBuilder.Entity<Choice>().HasData(
-                new Choice { Id = 10, ChoiceContent = "I do not worry", ChoiceType = "No Anxiety", QuestionId = 3 },
-                new Choice { Id = 11, ChoiceContent = "Sometimes", ChoiceType = "Mild Anxiety", QuestionId =3 },
-                new Choice { Id = 12, ChoiceContent = "Almost every day", ChoiceType = "Severe Anxiety", QuestionId = 3 }
-                );
-            modelBuilder.Entity<Choice>().HasData(
-                new Choice { Id = 13, ChoiceContent = "I do not worry", ChoiceType = "No Anxiety", QuestionId = 4 },
+                new Choice { Id = 13, ChoiceContent = "No, I do not",  ChoiceType = "No Anxiety", QuestionId = 4 },
                 new Choice { Id = 14, ChoiceContent = "Sometimes", ChoiceType = "Mild Anxiety", QuestionId = 4 },
                 new Choice { Id = 15, ChoiceContent = "Almost every day", ChoiceType = "Severe Anxiety", QuestionId = 4 }
                 );
@@ -92,7 +87,7 @@ namespace wellbeing_of_mind.Infastructure
                 new Choice { Id = 18, ChoiceContent = "Almost every day", ChoiceType = "Severe Anxiety", QuestionId = 5 }
                 );
             modelBuilder.Entity<Choice>().HasData(
-                new Choice { Id = 19, ChoiceContent = "I do not worry", ChoiceType = "No Anxiety", QuestionId = 6 },
+                new Choice { Id = 19, ChoiceContent = "I do not", ChoiceType = "No Anxiety", QuestionId = 6 },
                 new Choice { Id = 20, ChoiceContent = "Sometimes", ChoiceType = "Mild Anxiety", QuestionId = 6 },
                 new Choice { Id = 21, ChoiceContent = "Almost every day", ChoiceType = "Severe Anxiety", QuestionId = 6 }
                 );

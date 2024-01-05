@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import Test from "./Test";
 import { useNavigate } from "react-router-dom";
 
 const TestsList = () => {
@@ -18,7 +17,7 @@ const TestsList = () => {
   }, []);
 
   const handleCardClick = (testId) => {
-    navigate(`/tests/${testId}`);
+    navigate(`/test/${testId}`);
   };
 
   return (
@@ -36,23 +35,24 @@ const TestsList = () => {
         </button>
       </div>
       <div>{loading ? <p>Loading...</p> : <p></p>}</div>
-      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-4">
-        {tests.map((test) => (
-          <div
-            key={test.id}
-            className="col"
-            onClick={() => handleCardClick(test.id)}
-            style={{ cursor: "pointer" }}
-          >
-            <div className="testCard">
-            <h3>{test.title}</h3> 
-            <h4>{test.description}</h4>
+      <div className="card" style={{ backgroundColor: "lightblue" }}>
+        <div className="card-body">
+          {tests.map((test) => (
+            <div
+              key={test.id}
+              className="col"
+              onClick={() => handleCardClick(test.id)}
+              style={{ cursor: "pointer" }}
+            >
+            <h5 className="card-title">{test.title}</h5>
+            <p className="card-text">{test.description}</p>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+    </div>
     </div>
   );
 };
+
 
 export default TestsList;
